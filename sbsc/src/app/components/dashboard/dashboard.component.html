@@ -1,0 +1,76 @@
+<div class="container-fluid bg h-100">
+  <!-- Page title -->
+  <div class="row pr-3 animate__animated animate__fadeIn">
+    <div class="col-md-3">
+      <p class="title">Dashboard</p>
+    </div>
+    <div class="col-md-3 offset-md-3"></div>
+    <div class="col-md-3 text-right">
+
+      <p>{{ today | date: 'EEE, MMM dd, yyyy'}}</p>
+    </div>
+  </div>
+  <!-- /Page title -->
+
+  <!-- Info cards -->
+  <div class="row m-0 info animate__animated animate__fadeInDown">
+    <div class="col-md-6 p-0">
+      <div class="card blue border-0">
+        <img class="img-fluid svg" src="assets/img/undraw_data_trends_b0wg.svg" height="200" width="200">
+        <svg width="2em" height="2em" viewBox="0 0 16 16" class="close-icon bi bi-backspace text-white pointer" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M5.83 5.146a.5.5 0 0 0 0 .708l5 5a.5.5 0 0 0 .707-.708l-5-5a.5.5 0 0 0-.708 0z"/>
+          <path fill-rule="evenodd" d="M11.537 5.146a.5.5 0 0 1 0 .708l-5 5a.5.5 0 0 1-.708-.708l5-5a.5.5 0 0 1 .707 0z"/>
+        </svg>
+        <div class="card-body">
+          <p class="welcome-text blue-text text-uppercase pt-3">Welcome back! Chidinma</p>
+          <p class="text-white welcome-info">
+            See overview of analytics and reporting metrics and a lot more interesting stuffs you can do here.
+          </p>
+          <button class="btn white">Take A Tour</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 p-0">
+      <div class="card light-blue border-0">
+        <img class="img-fluid svg" src="assets/img/undraw_optimize_image_yp8f.svg" height="200" width="200">
+        <div class="card-body">
+          <p class="welcome-text text-theme text-uppercase pt-3">Optimized Application Processing</p>
+          <p class="welcome-info">
+            We’ve optimized the system to process your application as fast as possible. <b>Click on the button below to get started.</b>
+          </p>
+          <button class="btn blue">Take A Tour</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Info cards -->
+
+  <!-- Data Cards -->
+  <div class="row mx0-0 mt-5" *ngIf="dash$ | async as dash">
+    <div class="col-md-4 animate__animated animate__fadeInUp">
+      <data-card [radalTitle]="'Capex'" [type]="'play'" [styles]="'blue'"
+      [spent]="dash.totalPlayBudgetSpent"
+      [budget]="dash.totalPlayBudget"
+      [balance]="dash.totalPlayBudgetBalance"
+      [radalColor]="'#e2edf8'"
+      [radalShadowColor]="'#1b5bac'"></data-card>
+    </div>
+    <div class="col-md-4 animate__animated animate__fadeInUp">
+      <data-card [radalTitle]="'Opex'" [type]="'work'" [styles]="'orange'"
+      [spent]="dash.totalWorkBudgetSpent"
+      [budget]="dash.totalWorkBudget"
+      [balance]="dash.totalWorkBudgetBalance"
+      [radalColor]="'#F8E9E2'"
+      [radalShadowColor]="'#FF6542'"></data-card>
+    </div>
+    <div class="col-md-4 animate__animated animate__fadeInUp">
+      <data-card [radalTitle]="'Assets'" [styles]="'dark'" [type]="'cards'"
+      [spent]="dash.totalCardsCount"
+      [budget]="dash.totalCardsInUse"
+      [balance]="dash.totalCardsInActive"
+      [radalColor]="'#FFFBF5'"
+      [radalShadowColor]="'#F6AE2D'"></data-card>
+    </div>
+  </div>
+  <!-- /Data Cards -->
+</div>

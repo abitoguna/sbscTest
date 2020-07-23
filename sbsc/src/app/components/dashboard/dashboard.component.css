@@ -1,0 +1,55 @@
+.bg {
+  background-color: #F2F7FC;
+  padding: 10px 25px;
+}
+.title {
+  font-weight: 600;
+}
+
+.info .card {
+border-radius: 10px;
+position: relative;
+margin-right: 55px;
+}
+.card .close-icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.card .svg {
+  position: absolute;
+  right: -45px;
+  bottom: -20px;
+}
+.card.blue {
+  background: linear-gradient(163.88deg, #133F77 26.36%, #0F9CDA 125.59%);
+}
+.card.light-blue {
+  background: #E5EEFB;
+}
+.blue-text {
+  color: #78C2ED;
+}
+.welcome-text {
+  font-weight: 600;
+font-size: 18px;
+line-height: 25px;
+}
+.welcome-info {
+  font-size: 14px;
+line-height: 19px;
+width: 70%;
+}
+
+.btn {
+  box-shadow: 0px 10px 20px rgba(16, 60, 116, 0.3);
+}
+.btn.blue {
+  background-color: #1B5BAC;
+  color: #fff;
+}
+.btn.white {
+  color: #1B5BAC;
+  background-color: #fff;
+}
+

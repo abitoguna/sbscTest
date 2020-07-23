@@ -1,0 +1,67 @@
+<div class="card border-0" [ngStyle]="theme">
+  <div class="card-body">
+    <div class="row topic">
+      <div class="col-8 pr-0">
+        <p class="title my-0" *ngIf="type !== 'cards'">Annual {{type | titlecase}} Budget</p>
+        <p class="title my-0" *ngIf="type === 'cards'">{{type | titlecase}} Count</p>
+        <p class="sub-title my-1">Summary</p>
+      </div>
+      <select class="select-btn border-0" *ngIf="theme === 'dark'">
+        <option>This Year</option>
+        <option>This Month</option>
+        <option>This Week</option>
+        <option>Today</option>
+        <option>Overall</option>
+      </select>
+    </div>
+    <div class="radal text-center my-4" data-toggle="tooltip" data-placement="top" title="{{percentage | number: '1.0-0'}}%">
+      <circle-progress [percent]="percentage" [title]="radalTitle.toLocaleUpperCase()"
+      [innerStrokeColor]="radalColor"
+      [outerStrokeColor]="radalShadowColor"></circle-progress>
+    </div>
+    <div class="box" [ngStyle]="boxTheme" *ngIf="type !== 'cards'">
+      <div class="row p-3">
+        <div class="col-6">
+          <p class="sub-title m-0">Total {{type | titlecase}} (NGN)</p>
+          <p class="title m-0">{{budget | number:'1.2'}}</p>
+        </div>
+        <div class="col-6">
+          <p class="sub-title m-0"> <span class="dot" [style.background]="radalShadowColor"></span> Total Spent</p>
+          <p class="sub-title m-0"> <span class="dot"></span> Balance</p>
+        </div>
+      </div>
+      <div class="row p-3">
+        <div class="col-6">
+          <p class="sub-title m-0">Total Spent (NGN)</p>
+          <p class="title m-0">{{spent | number:'1.2'}}</p>
+        </div>
+        <div class="col-6">
+          <p class="sub-title m-0">Balance (NGN)</p>
+          <p class="title m-0">{{balance | number:'1.2'}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="box" [ngStyle]="boxTheme" *ngIf="type === 'cards'">
+      <div class="row p-3">
+        <div class="col-6">
+          <p class="sub-title m-0">Total {{type | titlecase}}</p>
+          <p class="title m-0">{{budget | number:'1.2'}}</p>
+        </div>
+        <div class="col-6">
+          <p class="sub-title m-0"> <span class="dot" [style.background]="radalShadowColor"></span> In-use</p>
+          <p class="sub-title m-0"> <span class="dot"></span> In-active</p>
+        </div>
+      </div>
+      <div class="row p-3">
+        <div class="col-6">
+          <p class="sub-title m-0">Cards in-use</p>
+          <p class="title m-0">{{spent | number:'1.2'}}</p>
+        </div>
+        <div class="col-6">
+          <p class="sub-title m-0">In-active</p>
+          <p class="title m-0">{{balance | number:'1.2'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

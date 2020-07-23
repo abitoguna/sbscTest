@@ -1,0 +1,33 @@
+<div class="login">
+  <div class="login_wrapper">
+    <div class="form">
+      <form [formGroup]="loginForm">
+        <p class="logo my-5">
+          <span class="s">S</span> Express Lands
+        </p>
+        <h1 class="big-text">Login to <br> your account</h1>
+        <p>Welcome back! Please login to your account</p>
+        <div class="alert alert-danger text-center alert-dismissible fade show" role="alert" *ngIf="error">
+          {{errMsg}}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-input w-100 border-0 p-2 bg-white" placeholder="Enter Username" formControlName="username">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-input w-100 border-0 p-2" placeholder="Enter Password" formControlName="password">
+        </div>
+        <button class="btn text-white bg-theme btn-block my-3" (click)="submitForm()" *ngIf="!loader" [disabled]="loginForm.invalid">Log in</button>
+        <button class="btn text-white bg-theme btn-block my-3" (click)="submitForm()" *ngIf="loader" [disabled]="true"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+           Authenicating...
+          </button>
+        <div class="text-center">
+          <a href="">Forgot Password?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

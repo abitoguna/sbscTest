@@ -1,0 +1,20 @@
+.layout-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.layout-wrapper .sidebar {
+  position: fixed;
+  height: 100vh;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 288px;
+}
+
+.layout-wrapper .main-content {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 288px;
+}

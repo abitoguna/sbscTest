@@ -1,0 +1,35 @@
+.login {
+  background-color: #000;
+  height: 100vh;
+}
+
+.login_wrapper {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 487px;
+  background-color: #fff;
+}
+
+.login .form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: auto;
+}
+
+.big-text {
+  font-size: 34px;
+  line-height: 41px;
+  font-weight: 900;
+  margin-top: 40px;
+  margin-bottom: 0px;
+}
+
+.form-input {
+  box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+  border-radius: 6px;
+}
