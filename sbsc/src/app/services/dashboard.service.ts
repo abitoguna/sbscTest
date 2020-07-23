@@ -18,7 +18,7 @@ export class DashboardService {
   loadDash(): Observable<Dashboard> {
     this.dash$ = this.http.get<any>(this.endpoints.loadDash)
     .pipe(
-
+      map( res => res[0]),
       catchError(this.handleError)
     );
     return this.dash$;

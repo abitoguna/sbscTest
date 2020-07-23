@@ -49,25 +49,25 @@
   <div class="row mx0-0 mt-5" *ngIf="dash$ | async as dash">
     <div class="col-md-4 animate__animated animate__fadeInUp">
       <data-card [radalTitle]="'Capex'" [type]="'play'" [styles]="'blue'"
-      [spent]="dash.totalPlayBudgetSpent"
-      [budget]="dash.totalPlayBudget"
-      [balance]="dash.totalPlayBudgetBalance"
+      [spent]="dash?.totalPlayBudgetSpent"
+      [budget]="dash?.totalPlayBudget"
+      [balance]="dash?.totalPlayBudgetBalance"
       [radalColor]="'#e2edf8'"
       [radalShadowColor]="'#1b5bac'"></data-card>
     </div>
     <div class="col-md-4 animate__animated animate__fadeInUp">
       <data-card [radalTitle]="'Opex'" [type]="'work'" [styles]="'orange'"
-      [spent]="dash.totalWorkBudgetSpent"
-      [budget]="dash.totalWorkBudget"
-      [balance]="dash.totalWorkBudgetBalance"
+      [spent]="dash?.totalWorkBudgetSpent"
+      [budget]="dash?.totalWorkBudget"
+      [balance]="dash?.totalWorkBudgetBalance"
       [radalColor]="'#F8E9E2'"
       [radalShadowColor]="'#FF6542'"></data-card>
     </div>
     <div class="col-md-4 animate__animated animate__fadeInUp">
       <data-card [radalTitle]="'Assets'" [styles]="'dark'" [type]="'cards'"
-      [spent]="dash.totalCardsCount"
-      [budget]="dash.totalCardsInUse"
-      [balance]="dash.totalCardsInActive"
+      [spent]="dash?.totalCardsCount"
+      [budget]="dash?.totalCardsInUse"
+      [balance]="dash?.totalCardsInActive"
       [radalColor]="'#FFFBF5'"
       [radalShadowColor]="'#F6AE2D'"></data-card>
     </div>
